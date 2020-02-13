@@ -2,6 +2,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
 from svg.path import parse_path 
+from scipy import optimize
 import sys
 
 
@@ -23,8 +24,7 @@ path = parse_path(Whistler_path)
 Whistler_length = 1400
 Whistler_points = [(p.real,p.imag) for p in (path.point(i/Whistler_length) for i in range(0,Whistler_length+1))]
 
-x,y = zip(*Whistler_points)
-
+line_x,line_y = zip(*Whistler_points)
 
 # track = Image.open(Alternberg).convert('P')
 # track = Image.open(Calgary).convert('P')
@@ -38,77 +38,85 @@ x_lim = track.size[0]
 y_lim = track.size[1]
 
 track = ((np.asarray(track)/225.0)-1.0)*(-1.0)
-y = tuple((np.asarray(y)-y_lim)*(-1))
+line_y = tuple((np.asarray(line_y)-y_lim)*(-1))
 
 
 f = plt.figure(figsize=(3,10))
 ax = f.add_subplot(121)
 ax2 = f.add_subplot(122)
 ax.imshow(track, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
-ax2.plot(x,y,'b-')
+ax2.plot(line_x,line_y,'b-')
 ax2.set_xlim(0,x_lim)
 ax2.set_ylim(0,y_lim)
 plt.show()
 
 
-sys.exit()
-
-track[track > 0] = 1
-
-# track = skeletonize(track, method='lee').astype(np.uint8)
-
-# print(ske)
-
-print(track)
-print(track.max())
-print(type(track))
 
 
-plt.imshow(track, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
+
+class ComputeCurvature:
+    def __init__(self):
+        """ Initialize some variables """
+        self.xc = 0  # X-coordinate of circle center
+        self.yc = 0  # Y-coordinate of circle center
+        self.r = 0   # Radius of the circle
+        self.xx = np.array([])  # Data points
+        self.yy = np.array([])  # Data points
+
+    def calc_r(self, xc, yc):
+        """ calculate the distance of each 2D points from the center (xc, yc) """
+        return np.sqrt((self.xx-xc)**2 + (self.yy-yc)**2)
+
+    def f(self, c):
+        """ calculate the algebraic distance between the data points and the mean circle centered at c=(xc, yc) """
+        ri = self.calc_r(*c)
+        return ri - ri.mean()
+
+    def df(self, c):
+        """ Jacobian of f_2b
+        The axis corresponding to derivatives must be coherent with the col_deriv option of leastsq"""
+        xc, yc = c
+        df_dc = np.empty((len(c), x.size))
+
+        ri = self.calc_r(xc, yc)
+        df_dc[0] = (xc - x)/ri                   # dR/dxc
+        df_dc[1] = (yc - y)/ri                   # dR/dyc
+        df_dc = df_dc - df_dc.mean(axis=1)[:, np.newaxis]
+        return df_dc
+
+    def fit(self, xx, yy):
+        self.xx = xx
+        self.yy = yy
+        center_estimate = np.r_[np.mean(xx), np.mean(yy)]
+        center = optimize.leastsq(self.f, center_estimate, Dfun=self.df, col_deriv=True)[0]
+
+        self.xc, self.yc = center
+        ri = self.calc_r(*center)
+        self.r = ri.mean()
+
+        return 1 / self.r  # Return the curvature
+
+line_x = list(line_x)[::-1]
+line_y = list(line_y)[::-1]
+
+
+# Apply code for an example
+x = np.asarray(line_x[:5])
+y = np.asarray(line_y[:5])
+
+comp_curv = ComputeCurvature()
+curvature = comp_curv.fit(x, y)
+
+# Plot the result
+theta_fit = np.linspace(-np.pi, np.pi, 180)
+x_fit = comp_curv.xc + comp_curv.r*np.cos(theta_fit)
+y_fit = comp_curv.yc + comp_curv.r*np.sin(theta_fit)
+plt.plot(line_x,line_y,'b-')
+plt.xlim(0,x_lim)
+plt.ylim(0,y_lim)
+plt.plot(x_fit, y_fit, 'k--', label='fit', lw=2)
+plt.plot(x, y, 'ro', label='data', ms=8, mec='b', mew=1)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('curvature = {:.3e}'.format(curvature))
 plt.show()
-sys.exit()
-
-class Route():
-    def __init__(self,image,start,view_size):
-        self.image = image
-        self.cur_x = start[0]
-        self.cur_y = start[1]
-        self.x = []
-        self.y = []
-        self.view_size = view_size
-        self.bound = view_size/2
-        self.start = start
-
-    def crop(self):
-        return self.image[int(self.cur_x-self.bound):int(self.cur_x+self.bound),
-            int(self.cur_y-self.bound):int(self.cur_y+self.bound)]
-
-    def fit(self):
-        z = self.crop()
-        y, x = np.indices(z.shape)
-        valid_z = (y.ravel()>0) & (z.ravel()>0)
-        x_valid = x.ravel()[valid_z]
-        y_valid = y.ravel()[valid_z]
-        z_valid = z.ravel()[valid_z]
-        z = np.polyfit(x_valid, y_valid, w=z_valid**0.5, deg=1)
-        p = np.poly1d(z)
-        print('z ',z)
-        print('p ',p)
-        return(p)
-
-    # def step(self):
-
-
-
-route = Route(image=track,start=(21,19),view_size=15)
-
-route_fit = route.fit()
-
-# # print(route.crop())
-# x_plot = np.linspace(0,route.view_size, 100)
-# y_plot = route_fit(x_plot)
-# print(int(y_plot[-1]))
-# print(int(x_plot[-1]))
-# plt.imshow(route.crop(), cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
-# plt.plot(x_plot, y_plot)
-# plt.show()
