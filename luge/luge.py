@@ -99,7 +99,7 @@ class ComputeCurvature:
 line_x = list(line_x)[::-1]
 line_y = list(line_y)[::-1]
 
-curve_point_total = 5
+curve_point_total = 10
 
 radius_array = []
 for n in range (0,Whistler_length-curve_point_total,curve_point_total):
@@ -110,7 +110,7 @@ for n in range (0,Whistler_length-curve_point_total,curve_point_total):
     comp_curv = ComputeCurvature()
     radius = comp_curv.fit(x, y)
     radius_array.append(radius)
-    # # Plot the result
+    # Plot the result
     # theta_fit = np.linspace(-np.pi, np.pi, 180)
     # x_fit = comp_curv.xc + comp_curv.r*np.cos(theta_fit)
     # y_fit = comp_curv.yc + comp_curv.r*np.sin(theta_fit)
@@ -126,7 +126,7 @@ for n in range (0,Whistler_length-curve_point_total,curve_point_total):
     # ax.set_aspect(aspect='equal')
     # ax.set_title('radius = {:.2f}'.format(radius))
     # # plt.show()
-    # plt.savefig(str(n)+'.png')
+    # plt.savefig('Whistler_'+str(n)+'.png')
 
 
 print('average radius ', np.mean(radius_array))
