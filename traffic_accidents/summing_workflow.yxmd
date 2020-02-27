@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Directory.Directory">
+        <Position x="54" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Directory>C:\OpsResearch\traffic_accidents\accident_data</Directory>
+          <FileSpec>*.csv*</FileSpec>
+          <IncludeSubDirs value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>dir C:\OpsResearch\traffic_accidents\accident_data\*.csv*</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDirectory" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings>
+        <Position x="162" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="ControlParams"><![CDATA[Control Parameter (10)=FullPath
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output13">
+          <RecordInfo>
+            <Field name="STATE" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="COUNTY" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="MONTH" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="DAY" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="HOUR" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="MINUTE" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="VE_FORMS" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="PERSONS" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="PEDS" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="NHS" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="ROAD_FNC" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="ROUTE" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="SP_JUR" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="HARM_EV" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="MAN_COLL" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="REL_JUNC" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="REL_ROAD" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="TRAF_FLO" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="NO_LANES" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="SP_LIMIT" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="ALIGNMNT" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="PROFILE" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="PAVE_TYP" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="SUR_COND" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="TRA_CONT" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="T_CONT_F" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="HIT_RUN" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="LGT_COND" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="WEATHER" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="C_M_ZONE" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="NOT_HOUR" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="NOT_MIN" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="ARR_HOUR" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="ARR_MIN" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="HOSP_HR" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="HOSP_MN" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="SCH_BUS" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="CF1" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="CF2" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="CF3" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="FATALS" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="DAY_WEEK" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="DRUNK_DR" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="ST_CASE" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="CITY" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="MILEPT" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="YEAR" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="TWAY_ID" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="TWAY_ID2" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="RAIL" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="latitude" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="longitud" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="VE_TOTAL" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="WEATHER1" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="WEATHER2" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="WRK_ZONE" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="RELJCT1" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="RELJCT2" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="TYP_INT" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="PVH_INVL" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="PERNOTMVIT" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="PERMVIT" size="1000" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="RUR_URB" size="1000" source="File: C:\OpsResearch\traffic_accidents\accident_data\ACCIDENT2015.CSV" type="V_String" />
+            <Field name="FUNC_SYS" size="1000" source="File: C:\OpsResearch\traffic_accidents\accident_data\ACCIDENT2015.CSV" type="V_String" />
+            <Field name="RD_OWNER" size="1000" source="File: C:\OpsResearch\traffic_accidents\accident_data\ACCIDENT2015.CSV" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="W:\eSite\DataGroup\Macros\Processing\Utilities\PullFileCSV.yxmc" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="354" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="VE_FORMS" selected="False" />
+            <SelectField field="PERSONS" selected="False" />
+            <SelectField field="PEDS" selected="False" />
+            <SelectField field="NHS" selected="False" />
+            <SelectField field="ROAD_FNC" selected="False" />
+            <SelectField field="ROUTE" selected="False" />
+            <SelectField field="SP_JUR" selected="False" />
+            <SelectField field="HARM_EV" selected="False" />
+            <SelectField field="MAN_COLL" selected="False" />
+            <SelectField field="REL_JUNC" selected="False" />
+            <SelectField field="REL_ROAD" selected="False" />
+            <SelectField field="TRAF_FLO" selected="False" />
+            <SelectField field="NO_LANES" selected="False" />
+            <SelectField field="SP_LIMIT" selected="False" />
+            <SelectField field="ALIGNMNT" selected="False" />
+            <SelectField field="PROFILE" selected="False" />
+            <SelectField field="PAVE_TYP" selected="False" />
+            <SelectField field="SUR_COND" selected="False" />
+            <SelectField field="TRA_CONT" selected="False" />
+            <SelectField field="T_CONT_F" selected="False" />
+            <SelectField field="HIT_RUN" selected="False" />
+            <SelectField field="LGT_COND" selected="False" />
+            <SelectField field="WEATHER" selected="False" />
+            <SelectField field="C_M_ZONE" selected="False" />
+            <SelectField field="NOT_HOUR" selected="False" />
+            <SelectField field="NOT_MIN" selected="False" />
+            <SelectField field="ARR_HOUR" selected="False" />
+            <SelectField field="ARR_MIN" selected="False" />
+            <SelectField field="HOSP_HR" selected="False" />
+            <SelectField field="HOSP_MN" selected="False" />
+            <SelectField field="SCH_BUS" selected="False" />
+            <SelectField field="CF1" selected="False" />
+            <SelectField field="CF2" selected="False" />
+            <SelectField field="CF3" selected="False" />
+            <SelectField field="FATALS" selected="False" />
+            <SelectField field="DAY_WEEK" selected="False" />
+            <SelectField field="DRUNK_DR" selected="False" />
+            <SelectField field="ST_CASE" selected="False" />
+            <SelectField field="CITY" selected="False" />
+            <SelectField field="MILEPT" selected="False" />
+            <SelectField field="TWAY_ID" selected="False" />
+            <SelectField field="TWAY_ID2" selected="False" />
+            <SelectField field="RAIL" selected="False" />
+            <SelectField field="latitude" selected="False" />
+            <SelectField field="longitud" selected="False" />
+            <SelectField field="FileName" selected="False" />
+            <SelectField field="VE_TOTAL" selected="False" />
+            <SelectField field="WEATHER1" selected="False" />
+            <SelectField field="WEATHER2" selected="False" />
+            <SelectField field="WRK_ZONE" selected="False" />
+            <SelectField field="RELJCT1" selected="False" />
+            <SelectField field="RELJCT2" selected="False" />
+            <SelectField field="TYP_INT" selected="False" />
+            <SelectField field="PVH_INVL" selected="False" />
+            <SelectField field="PERNOTMVIT" selected="False" />
+            <SelectField field="PERMVIT" selected="False" />
+            <SelectField field="RUR_URB" selected="False" />
+            <SelectField field="FUNC_SYS" selected="False" />
+            <SelectField field="RD_OWNER" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="546" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="STATE" action="GroupBy" rename="STATE" />
+            <SummarizeField field="Date" action="GroupBy" rename="Date" />
+            <SummarizeField field="HOUR" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="258" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="STATE" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Code" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_STATE" selected="False" input="Left_" />
+                <SelectField field="Right_Abbreviation" selected="False" input="Right_" />
+                <SelectField field="Right_Code" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="162" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\OpsResearch\traffic_accidents\state_codes.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>state_codes.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="State" size="254" source="File: C:\OpsResearch\traffic_accidents\state_codes.csv" type="V_String" />
+            <Field name="Abbreviation" size="254" source="File: C:\OpsResearch\traffic_accidents\state_codes.csv" type="V_String" />
+            <Field name="Code" size="254" source="File: C:\OpsResearch\traffic_accidents\state_codes.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="450" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[YEAR]+PadLeft([MONTH], 2, '0')+PadLeft([DAY], 2, '0')" field="Date" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Date = [YEAR]+PadLeft([MONTH], 2, '0')+PadLeft([DAY], 2, '0')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="666" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Date" />
+          </GroupFields>
+          <HeaderField field="STATE" />
+          <DataField field="Count" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Date" size="1073741823" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Alabama" source="CrossTab:Header:STATE:Alabama:Sum:" type="Int64" />
+            <Field name="Alaska" source="CrossTab:Header:STATE:Alaska:Sum:" type="Int64" />
+            <Field name="Arizona" source="CrossTab:Header:STATE:Arizona:Sum:" type="Int64" />
+            <Field name="Arkansas" source="CrossTab:Header:STATE:Arkansas:Sum:" type="Int64" />
+            <Field name="California" source="CrossTab:Header:STATE:California:Sum:" type="Int64" />
+            <Field name="Colorado" source="CrossTab:Header:STATE:Colorado:Sum:" type="Int64" />
+            <Field name="Connecticut" source="CrossTab:Header:STATE:Connecticut:Sum:" type="Int64" />
+            <Field name="Delaware" source="CrossTab:Header:STATE:Delaware:Sum:" type="Int64" />
+            <Field name="District_of_Columbia" source="CrossTab:Header:STATE:District of Columbia:Sum:" type="Int64" />
+            <Field name="Florida" source="CrossTab:Header:STATE:Florida:Sum:" type="Int64" />
+            <Field name="Georgia" source="CrossTab:Header:STATE:Georgia:Sum:" type="Int64" />
+            <Field name="Hawaii" source="CrossTab:Header:STATE:Hawaii:Sum:" type="Int64" />
+            <Field name="Idaho" source="CrossTab:Header:STATE:Idaho:Sum:" type="Int64" />
+            <Field name="Illinois" source="CrossTab:Header:STATE:Illinois:Sum:" type="Int64" />
+            <Field name="Indiana" source="CrossTab:Header:STATE:Indiana:Sum:" type="Int64" />
+            <Field name="Iowa" source="CrossTab:Header:STATE:Iowa:Sum:" type="Int64" />
+            <Field name="Kansas" source="CrossTab:Header:STATE:Kansas:Sum:" type="Int64" />
+            <Field name="Kentucky" source="CrossTab:Header:STATE:Kentucky:Sum:" type="Int64" />
+            <Field name="Louisiana" source="CrossTab:Header:STATE:Louisiana:Sum:" type="Int64" />
+            <Field name="Maine" source="CrossTab:Header:STATE:Maine:Sum:" type="Int64" />
+            <Field name="Maryland" source="CrossTab:Header:STATE:Maryland:Sum:" type="Int64" />
+            <Field name="Massachusetts" source="CrossTab:Header:STATE:Massachusetts:Sum:" type="Int64" />
+            <Field name="Michigan" source="CrossTab:Header:STATE:Michigan:Sum:" type="Int64" />
+            <Field name="Minnesota" source="CrossTab:Header:STATE:Minnesota:Sum:" type="Int64" />
+            <Field name="Mississippi" source="CrossTab:Header:STATE:Mississippi:Sum:" type="Int64" />
+            <Field name="Missouri" source="CrossTab:Header:STATE:Missouri:Sum:" type="Int64" />
+            <Field name="Montana" source="CrossTab:Header:STATE:Montana:Sum:" type="Int64" />
+            <Field name="Nebraska" source="CrossTab:Header:STATE:Nebraska:Sum:" type="Int64" />
+            <Field name="Nevada" source="CrossTab:Header:STATE:Nevada:Sum:" type="Int64" />
+            <Field name="New_Hampshire" source="CrossTab:Header:STATE:New Hampshire:Sum:" type="Int64" />
+            <Field name="New_Jersey" source="CrossTab:Header:STATE:New Jersey:Sum:" type="Int64" />
+            <Field name="New_Mexico" source="CrossTab:Header:STATE:New Mexico:Sum:" type="Int64" />
+            <Field name="New_York" source="CrossTab:Header:STATE:New York:Sum:" type="Int64" />
+            <Field name="North_Carolina" source="CrossTab:Header:STATE:North Carolina:Sum:" type="Int64" />
+            <Field name="North_Dakota" source="CrossTab:Header:STATE:North Dakota:Sum:" type="Int64" />
+            <Field name="Ohio" source="CrossTab:Header:STATE:Ohio:Sum:" type="Int64" />
+            <Field name="Oklahoma" source="CrossTab:Header:STATE:Oklahoma:Sum:" type="Int64" />
+            <Field name="Oregon" source="CrossTab:Header:STATE:Oregon:Sum:" type="Int64" />
+            <Field name="Pennsylvania" source="CrossTab:Header:STATE:Pennsylvania:Sum:" type="Int64" />
+            <Field name="Rhode_Island" source="CrossTab:Header:STATE:Rhode Island:Sum:" type="Int64" />
+            <Field name="South_Carolina" source="CrossTab:Header:STATE:South Carolina:Sum:" type="Int64" />
+            <Field name="South_Dakota" source="CrossTab:Header:STATE:South Dakota:Sum:" type="Int64" />
+            <Field name="Tennessee" source="CrossTab:Header:STATE:Tennessee:Sum:" type="Int64" />
+            <Field name="Texas" source="CrossTab:Header:STATE:Texas:Sum:" type="Int64" />
+            <Field name="Utah" source="CrossTab:Header:STATE:Utah:Sum:" type="Int64" />
+            <Field name="Vermont" source="CrossTab:Header:STATE:Vermont:Sum:" type="Int64" />
+            <Field name="Virginia" source="CrossTab:Header:STATE:Virginia:Sum:" type="Int64" />
+            <Field name="Washington" source="CrossTab:Header:STATE:Washington:Sum:" type="Int64" />
+            <Field name="West_Virginia" source="CrossTab:Header:STATE:West Virginia:Sum:" type="Int64" />
+            <Field name="Wisconsin" source="CrossTab:Header:STATE:Wisconsin:Sum:" type="Int64" />
+            <Field name="Wyoming" source="CrossTab:Header:STATE:Wyoming:Sum:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Date" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings>
+        <Position x="786" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"Date","Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District_of_Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New_Hampshire","New_Jersey","New_Mexico","New_York","North_Carolina","North_Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode_Island","South_Carolina","South_Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West_Virginia","Wisconsin","Wyoming"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="918" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_19612_795ff4867865444e906ffb1a27a22df7_\Engine_21884_b3c65d015f19496fb4b4f1c9d4433d96_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="546" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="State" order="Ascending" />
+            <Field field="YEAR" order="Ascending" />
+            <Field field="MONTH" order="Ascending" />
+            <Field field="DAY" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>State - Ascending
+YEAR - Ascending
+MONTH - Ascending
+DAY - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="918" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\OpsResearch\traffic_accidents\summed_data.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>summed_data.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output13" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output26" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output26" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>summing_workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

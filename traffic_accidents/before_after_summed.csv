@@ -1,0 +1,19 @@
+State,before_after,Count,Sum_Value
+Alaska,after,366,65
+Alaska,before,365,63
+California,after,365,3259
+California,before,365,3569
+Colorado,after,366,452
+Colorado,before,365,432
+District of Columbia,after,366,23
+District of Columbia,before,365,19
+Massachusetts,after,366,335
+Massachusetts,before,365,348
+Nevada,after,366,290
+Nevada,before,365,313
+Oregon,after,366,419
+Oregon,before,365,386
+Vermont,after,344,59
+Vermont,before,365,61
+Washington,after,366,406
+Washington,before,365,403
