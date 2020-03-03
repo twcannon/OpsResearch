@@ -1,7 +1,6 @@
 import mate_mutate
 import numpy as np
 
-
 # Ax=b
 
 parent_matrix = np.array([
