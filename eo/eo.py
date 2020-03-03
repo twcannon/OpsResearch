@@ -11,14 +11,14 @@ parent_matrix = np.array([
     ])
 
 
-# print('\nmating functions:')
-# print('original matrix:\n', parent_matrix)
-# print('mean',mate_mutate.mate_mean(parent_matrix))
-# print('median',mate_mutate.mate_median(parent_matrix))
-# print('swap',mate_mutate.mate_swap(parent_matrix))
+print('\nmating functions:')
+print('original matrix:\n', parent_matrix)
+print('mean',mate_mutate.mate_mean(parent_matrix))
+print('median',mate_mutate.mate_median(parent_matrix))
+print('swap',mate_mutate.mate_swap(parent_matrix))
 
-# print('\nmutating functions:')
-# print('original vector:\n', parent_matrix[0])
-# print('flip',mate_mutate.mutate_flip(parent_matrix[0]))
-# print('insert',mate_mutate.mutate_insert(parent_matrix[0]))
+print('\nmutating functions:')
+print('original vector:\n', parent_matrix[0])
+print('flip',mate_mutate.mutate_flip(parent_matrix[0]))
+print('insert',mate_mutate.mutate_insert(parent_matrix[0]))
 print('reverse',mate_mutate.mutate_reverse(parent_matrix[0]))

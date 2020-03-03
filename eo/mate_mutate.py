@@ -47,20 +47,10 @@ def mutate_insert(parent_vector):
 
 def mutate_reverse(parent_vector):
     parent_slices = np.sort(np.asarray(random.sample(range(len(parent_vector)), 2)))
-    print('parent_slices',parent_slices)
     p_v_list = parent_vector.tolist()
-    print(p_v_list)
-    print(p_v_list[2:4])
-    print(p_v_list[2:4].reverse())
-    child_vector = p_v_list
-    reversed_parent_slice = p_v_list[2:4] ### need to reverse
-    print(reversed_parent_slice
-        )
-    for index in range(2,4):
-        print(index)
-        print(index-2)
-        val = reversed_parent_slice[index-2]
-        print(val)
-        child_vector[index] = val
-
-    print(child_vector)
+    reversed_p_v_list = parent_vector.tolist()[parent_slices[0]:parent_slices[1]+1]
+    reversed_p_v_list.reverse()
+    child_vector = parent_vector.tolist()[0:parent_slices[0]]+\
+        reversed_p_v_list+\
+        (parent_vector.tolist()[parent_slices[1]+1:] if (parent_slices[1] < len(parent_vector)-1) else [])
+    return child_vector
