@@ -58,7 +58,6 @@ p = p[idx[:k]]
 print(p)
 
 
-
  	
 
 # to mate / mutate
