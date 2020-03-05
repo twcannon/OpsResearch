@@ -58,12 +58,12 @@ def mate(parents,desired_pop,swap_pct,mean_pct,median_pct):
 
         children[i] = child
 
-    return np.concatenate((children,parents),axis=0)
+    return children,parents
 
 
 
 
-def mutate(parents,mutate_prob,flip_pct,insert_pct,reverse_pct):
+def mutate(parents,mutate_prob,flip_pct,insert_pct,reverse_pct,scale_pct):
 
 
     def mutate_flip(parent_vector):
@@ -71,6 +71,8 @@ def mutate(parents,mutate_prob,flip_pct,insert_pct,reverse_pct):
         parent_vector[i1], parent_vector[i2] = parent_vector[i2], parent_vector[i1]
         return parent_vector
 
+    def mutate_scale(parent_vector):
+        return parent_vector * random.uniform(0, 1)
 
     def mutate_insert(parent_vector):
         parent_vector = list(parent_vector)
@@ -92,18 +94,20 @@ def mutate(parents,mutate_prob,flip_pct,insert_pct,reverse_pct):
 
 
     for i in range(len(parents)):
-        if mutate_prob > random.uniform(0, 1):
+        if mutate_prob > random.uniform(0, 2):
 
             weight_dict = {
               "flip_pct": flip_pct,
               "insert_pct": insert_pct,
-              "reverse_pct": reverse_pct
+              "reverse_pct": reverse_pct,
+              "scale_pct": scale_pct
             }
 
             mutate_function_dict = {
                 'flip_pct':mutate_flip,
                 'insert_pct':mutate_insert,
-                'reverse_pct':mutate_reverse
+                'reverse_pct':mutate_reverse,
+                'scale_pct':mutate_scale
             }
 
             key = weighted_random_by_dct(weight_dict)
@@ -112,3 +116,4 @@ def mutate(parents,mutate_prob,flip_pct,insert_pct,reverse_pct):
         else:
             next
     return parents
+

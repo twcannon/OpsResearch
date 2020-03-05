@@ -1,23 +1,56 @@
 import mate_mutate
 import evaluate_pop
+import samples
 import numpy as np
 import sys
 
 
-sample_size = 40
-dimensions = 5
+sample_size = 100
+dimensions = 3
 A = np.random.randint(21, size=(dimensions,dimensions)).astype('float_')
 p = []
 b = np.random.randint(21, size=(dimensions,1)).astype('float_')
-percent = 0.25
+surviving_percent = 0.25
+new_sample_rate = .35
+count_criteria = 100
+
+
+min_norm = 99999999999
 
 for i in range(sample_size):
-	parent = np.random.randint(21, size=(1,dimensions)).astype('float_').flatten()
-	p.append(parent)
+    parent = samples.create_sample(dimensions)
+    p.append(parent)
 p = np.array(p)
- 
-p = evaluate_pop.find_fittest(A,b,p,sample_size,percent)
 
-p = mate_mutate.mate(p,sample_size,.333,.333,.333)
+count=0
+old_norm=0
+while count <= count_criteria: 
+    p = evaluate_pop.find_fittest(A,b,p,sample_size,surviving_percent)
+    
+    p = samples.create_new_sample(p,dimensions,new_sample_rate)
+    # mate(parents,desired_pop,swap_pct,mean_pct,median_pct)
+    parents,children = mate_mutate.mate(p,sample_size,(1./3.),(1./3.),(1./3.))
 
-p = mate_mutate.mutate(p,0.85,.333,.333,.333)
+    p = np.concatenate((children,parents),axis=0)
+    
+    # mutate(parents,mutate_prob,flip_pct,insert_pct,reverse_pct,scale_pct)
+    p = mate_mutate.mutate(p,0.85,(1./4.),(1./4.),(1./4.),(1./4.))
+
+    norms = evaluate_pop.find_norms(A,b,p,sample_size)
+    min_norm = np.min(norms)
+
+    if min_norm == old_norm:
+        count+=1
+    else:
+        count=0
+
+    old_norm = min_norm
+
+    print('min norm',np.min(norms))
+    # print('min vector',p[np.argmin(norms)].T)
+
+solution = p[np.argmin(norms)]
+print('solution vector',solution)
+
+print('Ax',np.matmul(A,np.transpose([solution])))
+print('b',b)
