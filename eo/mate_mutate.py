@@ -60,25 +60,7 @@ def mate(parents,desired_pop,swap_pct,mean_pct,median_pct):
 
     return np.concatenate((children,parents),axis=0)
 
-# def mate_swap(parent_matrix):
-#     p_shape = parent_matrix.shape
-#     parent_slices = np.sort(np.asarray(random.sample(range(p_shape[1]), p_shape[0])))
-#     child_vector = []
-#     for index in range(p_shape[0]):
-#         parent_vector = parent_matrix[index].tolist()
-#         if index == 0:
-#             if parent_slices[index] == 0:
-#                 child_vector = child_vector + [parent_vector[0]]
-#             else:
-#                 child_vector = child_vector + parent_vector[0:parent_slices[index]+1]
-#         elif index == p_shape[0]-1:
-#             child_vector = child_vector + parent_vector[(parent_slices[index-1]+1):p_shape[1]]
-#         else:
-#             if (parent_slices[index-1]+1) == parent_slices[index]:
-#                 child_vector = child_vector + [parent_vector[parent_slices[index]]]
-#             else:
-#                 child_vector = child_vector + parent_vector[(parent_slices[index-1]+1):parent_slices[index]+1]
-#     return child_vector
+
 
 
 def mutate(parents,mutate_prob,flip_pct,insert_pct,reverse_pct):
