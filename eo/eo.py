@@ -7,18 +7,19 @@ import sys
 
 sample_size = 100
 dimensions = 3
-A = np.random.randint(21, size=(dimensions,dimensions)).astype('float_')
+value_range = 20
+A = np.random.randint(value_range, size=(dimensions,dimensions)).astype('float_')
 p = []
-b = np.random.randint(21, size=(dimensions,1)).astype('float_')
+b = np.random.randint(value_range, size=(dimensions,1)).astype('float_')
 surviving_percent = 0.25
 new_sample_rate = .35
-count_criteria = 100
+count_criteria = 50
 
 
 min_norm = 99999999999
 
 for i in range(sample_size):
-    parent = samples.create_sample(dimensions)
+    parent = samples.create_sample(dimensions,value_range)
     p.append(parent)
 p = np.array(p)
 
@@ -27,7 +28,7 @@ old_norm=0
 while count <= count_criteria: 
     p = evaluate_pop.find_fittest(A,b,p,sample_size,surviving_percent)
     
-    p = samples.create_new_sample(p,dimensions,new_sample_rate)
+    p = samples.create_new_sample(p,dimensions,new_sample_rate,value_range)
     # mate(parents,desired_pop,swap_pct,mean_pct,median_pct)
     parents,children = mate_mutate.mate(p,sample_size,(1./3.),(1./3.),(1./3.))
 
