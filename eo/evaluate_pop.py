@@ -13,7 +13,6 @@ def find_norms(A,b,p,s):
 
 def find_fittest(A,b,p,s,percent):
     norm = find_norms(A,b,p,s)
-    
     k = int(s*percent)
     idx = np.argpartition(norm, k)
-    return p[idx[:k]]
+    return p[idx[:k]],norm[idx[:k]]

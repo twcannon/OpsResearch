@@ -7,9 +7,14 @@ def create_sample(dimensions,value_range):
     return parent
 
 
-def create_new_sample(parents,dimensions,sample_rate,value_range):
-    for i in range(2,len(parents)):
-        if sample_rate >= random.uniform(0, 1):
-            idx = np.random.randint(0,len(parents))
-            parents[idx] = create_sample(dimensions,value_range)
+def create_new_sample(parents,dimensions,sample_rate,value_range,min_p_norms):
+    hold_out_num = int(len(parents)*.1)
+    idxs = np.argpartition(min_p_norms, hold_out_num if hold_out_num > 0 else 1)
+    for i in range(len(parents)):
+        if i in idxs:
+            next
+        else:
+            if sample_rate >= random.uniform(0, 1):
+                # idx = np.random.randint(0,len(parents))
+                parents[i] = create_sample(dimensions,value_range)
     return parents
