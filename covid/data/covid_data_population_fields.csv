@@ -1,0 +1,165 @@
+﻿Name,Description
+CountyCode,""
+CYA04V001,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age   0-4
+CYA04V002,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age   5-9
+CYA04V003,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 10-14
+CYA04V004,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 15-17
+CYA04V005,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 18-19
+CYA04V006,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 20
+CYA04V007,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 21
+CYA04V008,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 22-24
+CYA04V009,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 25-29
+CYA04V010,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 30-34
+CYA04V011,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 35-39
+CYA04V012,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 40-44
+CYA04V013,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 45-49
+CYA04V014,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 50-54
+CYA04V015,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 55-59
+CYA04V016,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 60-61
+CYA04V017,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 62-64
+CYA04V018,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 65
+CYA04V019,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 66
+CYA04V020,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 67-69
+CYA04V021,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 70-74
+CYA04V022,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 75-79
+CYA04V023,Basic Variables Current Year Estimates A (2018) Age Total (Pop) Age 80-84
+CYA16VV01,"Basic Variables Current Year Estimates A (2018) Age Total (Pop) Average (Mean) Age, Total"
+CYA18VV01,"Basic Variables Current Year Estimates A (2018) Age Total (Pop) Median Age, Total"
+CYD02VV05,Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total 9th grade
+CYD02VV06,Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total 10th grade
+CYD02VV07,Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total 11th grade
+CYD02VV08,"Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total 12th grade, no diploma"
+CYD02VV09,"Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total High school graduate, GED, or alternative"
+CYD02VV12,"Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total Associate's degree"
+CYD02VV13,"Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total Bachelor's degree"
+CYD02VV14,"Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total Master's degree"
+CYD02VV16,Basic Variables Current Year Estimates A (2018) Educational Attainment By Sex (Pop 25+) Total Doctorate degree
+CYB11V001,Basic Variables Current Year Estimates A (2018) Household Size By Household Type Total (HHs) 1-Person Households
+CYB11V002,Basic Variables Current Year Estimates A (2018) Household Size By Household Type Total (HHs) 2-Person Households
+CYB11V003,Basic Variables Current Year Estimates A (2018) Household Size By Household Type Total (HHs) 3-Person Households
+CYB11V004,Basic Variables Current Year Estimates A (2018) Household Size By Household Type Total (HHs) 4-Person Households
+CYB11V005,Basic Variables Current Year Estimates A (2018) Household Size By Household Type Total (HHs) 5-Person Households
+CYB11V006,Basic Variables Current Year Estimates A (2018) Household Size By Household Type Total (HHs) 6-Person Households
+CYB11V007,Basic Variables Current Year Estimates A (2018) Household Size By Household Type Total (HHs) 7+ Person Households
+CYC01V001,"Basic Variables Current Year Estimates A (2018) Income Household Household Income   < $10,000"
+CYC01V002,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $10,000-$14,999"
+CYC01V003,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $15,000-$19,999"
+CYC01V004,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $20,000-$24,999"
+CYC01V005,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $25,000-$29,999"
+CYC01V006,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $30,000-$34,999"
+CYC01V007,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $35,000-$39,999"
+CYC01V008,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $40,000-$44,999"
+CYC01V009,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $45,000-$49,999"
+CYC01V010,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $50,000-$59,999"
+CYC01V011,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $60,000-$74,999"
+CYC01V012,"Basic Variables Current Year Estimates A (2018) Income Household Household Income  $75,000-$99,999"
+CYC01V013,"Basic Variables Current Year Estimates A (2018) Income Household Household Income $100,000-$124,999"
+CYC01V014,"Basic Variables Current Year Estimates A (2018) Income Household Household Income $125,000-$149,999"
+CYC01V015,"Basic Variables Current Year Estimates A (2018) Income Household Household Income $150,000-$199,999"
+CYC01V016,"Basic Variables Current Year Estimates A (2018) Income Household Household Income $200,000-$249,999"
+CYC01V017,"Basic Variables Current Year Estimates A (2018) Income Household Household Income $250,000-$499,999"
+CYC01V018,"Basic Variables Current Year Estimates A (2018) Income Household Household Income $500,000+"
+CYEC14V001,Basic Variables Current Year Estimates A (2018) Income Household Average (Mean) Household Income
+CYEC17V001,Basic Variables Current Year Estimates A (2018) Income Household Median Household Income
+CYC13VV01,Basic Variables Current Year Estimates A (2018) Income Per Capita Income (based on Total Population)
+CYA12V001,Basic Variables Current Year Estimates A (2018) Marital Status (Pop 15 Plus) Total Never Married
+CYA12V002,Basic Variables Current Year Estimates A (2018) Marital Status (Pop 15 Plus) Total Now Married
+CYA12V007,Basic Variables Current Year Estimates A (2018) Marital Status (Pop 15 Plus) Total Widowed
+CYA12V008,Basic Variables Current Year Estimates A (2018) Marital Status (Pop 15 Plus) Total Divorced
+CYEA07V007,Basic Variables Current Year Estimates A (2018) Race and Ethnicity American Indian/Alaska Native Total American Indian/Alaska Native Population
+CYEA07V010,Basic Variables Current Year Estimates A (2018) Race and Ethnicity Asian Total Asian Population
+CYEA07V004,Basic Variables Current Year Estimates A (2018) Race and Ethnicity Black/African American Total Black/African American Population
+CYEA06V001,Basic Variables Current Year Estimates A (2018) Race and Ethnicity Hispanic/Latino Total Hispanic/Latino Population
+CYEA07V013,Basic Variables Current Year Estimates A (2018) Race and Ethnicity Native Hawaiian / Other Pacific Islander Total Native Hawaiian/Other Pacific Islander Population
+CYEA07V016,Basic Variables Current Year Estimates A (2018) Race and Ethnicity Some Other Race Total Some Other Race Population
+CYEA07V019,Basic Variables Current Year Estimates A (2018) Race and Ethnicity Two or More Races Total Two or More Races Population
+CYEA07V001,Basic Variables Current Year Estimates A (2018) Race and Ethnicity White Total White Population
+SNP2017Q1,Basic Variables Current Year Estimates A (2018) Seasonal Population by Quarter Seasonal Population 2017 Q1
+SNP2017Q2,Basic Variables Current Year Estimates A (2018) Seasonal Population by Quarter Seasonal Population 2017 Q2
+SNP2017Q3,Basic Variables Current Year Estimates A (2018) Seasonal Population by Quarter Seasonal Population 2017 Q3
+SNP2017Q4,Basic Variables Current Year Estimates A (2018) Seasonal Population by Quarter Seasonal Population 2017 Q4
+CYA01V001,Basic Variables Current Year Estimates A (2018) Total Population
+CYA15VV01,Basic Variables Current Year Estimates A (2018) Ratio of Males to Females
+CYA21V001,Basic Variables Current Year Estimates A (2018) Land Area (Estimated Square Miles)
+CYADULT18P,Basic Variables Current Year Estimates A (2018) Adult Population
+CYB02V001,Basic Variables Current Year Estimates A (2018) Total Households
+CYB03V001,Basic Variables Current Year Estimates A (2018) Total Families
+CYB26VV01,Basic Variables Current Year Estimates A (2018) Average (Mean) Household Size
+CYPOPDENS,Basic Variables Current Year Estimates A (2018) Population Density
+PYCYPOPGRW,Basic Variables Current Year Estimates A (2018) 5 Year Projected Population Growth
+ECN211,"Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Agriculture, Forestry, Fishing and Hunting (11)"
+ECN221,"Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Mining, Quarrying, and Oil and Gas Extraction (21)"
+ECN222,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Utilities (22)
+ECN223,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Construction (23)
+ECN231,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Manufacturing (31)
+ECN232,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Manufacturing (32)
+ECN233,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Manufacturing (33)
+ECN242,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Wholesale Trade (42)
+ECN244,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Retail Trade (44)
+ECN245,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Retail Trade (45)
+ECN248,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Transportation and Warehousing (48)
+ECN249,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Transportation and Warehousing (49)
+ECN251,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Information (51)
+ECN252,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Finance and Insurance (52)
+ECN253,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Real Estate and Rental and Leasing (53)
+ECN254,"Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Professional, Scientific, and Technical Services (54)"
+ECN255,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Management of Companies and Enterprises (55)
+ECN256,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Administrative and Support and Waste Management and Remediation Services (56)
+ECN261,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Educational Services (61)
+ECN262,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Health Care and Social Assistance (62)
+ECN271,"Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Arts, Entertainment, and Recreation (71)"
+ECN272,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Accommodation and Food Services (72)
+ECN281,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Other Services (except Public Administration) (81)
+ECN292,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Public Administration (92)
+ESXX,Business Summary Estimates (Q1) (2019) Employees  NAICS by Business Sector (2 digit code) Total Employees
+SSN211,"Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Agriculture, Forestry, Fishing and Hunting (11)"
+SSN221,"Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Mining, Quarrying, and Oil and Gas Extraction (21)"
+SSN222,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Utilities (22)
+SSN223,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Construction (23)
+SSN231,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Manufacturing (31)
+SSN232,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Manufacturing (32)
+SSN233,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Manufacturing (33)
+SSN242,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Wholesale Trade (42)
+SSN244,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Retail Trade (44)
+SSN245,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Retail Trade (45)
+SSN248,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Transportation and Warehousing (48)
+SSN249,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Transportation and Warehousing (49)
+SSN251,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Information (51)
+SSN252,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Finance and Insurance (52)
+SSN253,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Real Estate and Rental and Leasing (53)
+SSN254,"Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Professional, Scientific, and Technical Services (54)"
+SSN255,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Management of Companies and Enterprises (55)
+SSN256,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Administrative and Support and Waste Management and Remediation Services (56)
+SSN261,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Educational Services (61)
+SSN262,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Health Care and Social Assistance (62)
+SSN271,"Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Arts, Entertainment, and Recreation (71)"
+SSN272,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Accommodation and Food Services (72)
+SSN281,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Other Services (except Public Administration) (81)
+SSN292,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Public Administration (92)
+SSXX,Business Summary Estimates (Q1) (2019) Establishments  NAICS by Business Sector (2 digit code) Total Establishments
+ATOTALEXP,Consumer Expenditure Current Year Estimates A (2018) Average Consumer Expenditure
+TCTOTALEXP,Consumer Expenditure Current Year Estimates A (2018) Total Consumer Expenditure
+DP01V001,Daytime Population Current Year Estimates A (2018) Total Daytime Population
+CYD04V004,Occupation and Employment Current Year Estimates A (2018) Labor Force (Pop 16+) Total Not in Labor Force
+CYD04VTLF,Occupation and Employment Current Year Estimates A (2018) Labor Force (Pop 16+) Total Total in Labor Force
+CYD08V001,"Occupation and Employment Current Year Estimates A (2018) Method of Transport to Work (Workers 16+) Car, truck, or van"
+CYD08V009,Occupation and Employment Current Year Estimates A (2018) Method of Transport to Work (Workers 16+) Public transport (not taxi)
+CYD08V015,Occupation and Employment Current Year Estimates A (2018) Method of Transport to Work (Workers 16+) Taxicab
+CYD08V016,Occupation and Employment Current Year Estimates A (2018) Method of Transport to Work (Workers 16+) Motorcycle
+CYD08V017,Occupation and Employment Current Year Estimates A (2018) Method of Transport to Work (Workers 16+) Bicycle
+CYD08V018,Occupation and Employment Current Year Estimates A (2018) Method of Transport to Work (Workers 16+) Walked
+CYD08V019,Occupation and Employment Current Year Estimates A (2018) Method of Transport to Work (Workers 16+) Other means
+CYD09V001,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Worked at home
+CYD09V002,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work:    < 5 minutes
+CYD09V003,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work:  5-9 minutes
+CYD09V004,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 10-14 minutes
+CYD09V005,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 15-19 minutes
+CYD09V006,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 20-24 minutes
+CYD09V007,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 25-29 minutes
+CYD09V008,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 30-34 minutes
+CYD09V009,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 35-39 minutes
+CYD09V010,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 40-44 minutes
+CYD09V011,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 45-59 minutes
+CYD09V012,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 60-89 minutes
+CYD09V013,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Travel time to work: 90+ minutes
+CYED12V001,Occupation and Employment Current Year Estimates A (2018) Travel Time to Work (Workers 16+) Average (Mean) Travel Time: Worked Away from Home
