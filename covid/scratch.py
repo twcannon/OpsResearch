@@ -105,21 +105,32 @@ def gauss_error_model(x,a,B,p):
 # death_logistic_fit = curve_fit(logistic_model,death_time,death_data,p0=[2.,100.,20000.],maxfev=10000)
 # gamma_cdf_fit = curve_fit(gamma_cdf_model,time,data,p0=[100.,60.,1.])
 death_gauss_error_fit = curve_fit(gauss_error_model,death_time,death_data,p0=[0.,0.,0.],maxfev=10000)
+case_gauss_error_fit = curve_fit(gauss_error_model,case_time,case_data,p0=[0.,0.,0.],maxfev=10000)
 
 # print('gamma:',gamma_cdf_fit[0])
 # print('death logistic',death_logistic_fit[0])
-print('death gauss error',death_gauss_error_fit[0])
+# print('death gauss error',death_gauss_error_fit[0])
 
-print('\n\ndeaths so far:',death_data[-1])
-print('estimated total deaths:',death_gauss_error_fit[0][2])
 print('\n')
 
-plt.plot(death_plot_time,death_plot_data, 'o',label = 'data')
+if d_c.lower() == 'deaths':
+    total_deaths = death_gauss_error_fit[0][2]
+    print('\n\ndeaths so far:',death_data[-1])
+    print('estimated total deaths:',int(total_deaths))
+    print('death/pop ratio',total_deaths/pop)
+    plt.plot(death_plot_time,death_plot_data, 'o',label = 'data')
+    plt.plot(more_time+time_diff,gauss_error_model(more_time,*death_gauss_error_fit[0]),label = 'model')
+elif d_c.lower() == 'cases':
+    total_cases = case_gauss_error_fit[0][2]
+    print('\n\ncases so far:',case_data[-1])
+    print('estimated total cases:',int(case_gauss_error_fit[0][2]))
+    print('case/pop ratio',total_cases/pop)
+    plt.plot(case_time,case_data, 'o',label = 'data')
+    plt.plot(more_time,gauss_error_model(more_time,*case_gauss_error_fit[0]),label = 'model')
 # plt.plot(case_time,case_data)
 # plt.plot(death_time+time_diff,logistic_model(death_time,*death_logistic_fit[0]))
 # plt.plot(more_time,gamma.cdf(more_time,*gamma_fit))
 # plt.plot(time,gamma_cdf_model(time,*gamma_cdf_fit[0]))
-plt.plot(more_time+time_diff,gauss_error_model(more_time,*death_gauss_error_fit[0]),label = 'model')
 plt.title(d_c+' '+data_dict[val]['name'])
 plt.legend()
 plt.show()
