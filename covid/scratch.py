@@ -10,9 +10,10 @@ from scipy.special import erf
 # from datetime import datetime,timedelta
 # from scipy.special import gammainc#, gamma
 
-# python scratch.py state NY
-# python scratch.py county 45019
-# python scratch.py county 36061
+# python scratch.py Deaths Country USA
+# python scratch.py Deaths state NY
+# python scratch.py Deaths county 45019
+# python scratch.py Cases county 36061
 
 ### args
 d_c = sys.argv[1]
@@ -33,10 +34,10 @@ def safeget(dct,*keys):
 
 
 data_dict = {}
-last_state = ''
+last_name = ''
 for entry in data:
     if geo == 'state':
-        if last_state != entry['stateAbbr']:
+        if last_name != entry['stateAbbr']:
             data_dict[entry['stateAbbr']] = {
                 'name':entry['stateAbbr'],
                 'pop':entry['popul'],
@@ -50,8 +51,8 @@ for entry in data:
                 'deaths':data_dict[entry['stateAbbr']]['deaths']+np.array(entry['deaths']),
                 'cases':data_dict[entry['stateAbbr']]['cases']+np.array(entry['confirmed'])
             }
-        last_state = entry['stateAbbr']
-    else:
+        last_name = entry['stateAbbr']
+    elif geo == 'county':
         data_dict[entry['countyFIPS']] = {
             'name':entry['county'],
             'pop':entry['popul'],
@@ -59,13 +60,25 @@ for entry in data:
             'deaths':np.array(entry['deaths']),
             'cases':np.array(entry['confirmed'])
         }
+    elif geo == 'country':
+        if last_name != 'USA':
+            data_dict['USA'] = {
+                'name':'USA',
+                'pop':entry['popul'],
+                'deaths':np.array(entry['deaths']),
+                'cases':np.array(entry['confirmed'])
+            }
+        else:
+            data_dict['USA'] = {
+                'name':'USA',
+                'pop':data_dict['USA']['pop']+entry['popul'],
+                'deaths':data_dict['USA']['deaths']+np.array(entry['deaths']),
+                'cases':data_dict['USA']['cases']+np.array(entry['confirmed'])
+            }
+        last_name = 'USA'
+
 
 rate_tol = 1e-15
-
-
-
-# county = '45019' ## CHS
-county = '36061' ## NYC
 
 pop = float(data_dict[val]['pop'])
 
@@ -115,18 +128,45 @@ print('\n')
 
 if d_c.lower() == 'deaths':
     total_deaths = death_gauss_error_fit[0][2]
+    death_error = np.sqrt(np.diag(death_gauss_error_fit[1]))
     print('\n\ndeaths so far:',death_data[-1])
-    print('estimated total deaths:',int(total_deaths))
+    print('estimated total deaths:',int(total_deaths),'with 1 stdev of',death_error[2])
     print('death/pop ratio',total_deaths/pop)
-    plt.plot(death_plot_time,death_plot_data, 'o',label = 'data')
+
+    death_model = gauss_error_model(more_time,*death_gauss_error_fit[0])
+    death_upper = gauss_error_model(more_time,
+        death_gauss_error_fit[0][0]+death_error[0],
+        death_gauss_error_fit[0][1]+death_error[1],
+        death_gauss_error_fit[0][2]+death_error[2])
+    death_lower = gauss_error_model(more_time,
+        death_gauss_error_fit[0][0]-death_error[0],
+        death_gauss_error_fit[0][1]-death_error[1],
+        death_gauss_error_fit[0][2]-death_error[2])
+
+    plt.plot(death_plot_time,death_plot_data, '.k',label = 'data')
     plt.plot(more_time+time_diff,gauss_error_model(more_time,*death_gauss_error_fit[0]),label = 'model')
+    plt.fill_between(more_time+time_diff, death_lower, death_upper, alpha=0.2)
+
 elif d_c.lower() == 'cases':
     total_cases = case_gauss_error_fit[0][2]
+    case_error = np.sqrt(np.diag(case_gauss_error_fit[1]))
     print('\n\ncases so far:',case_data[-1])
-    print('estimated total cases:',int(case_gauss_error_fit[0][2]))
+    print('estimated total cases:',total_cases,'with 1 stdev of',case_error[2])
     print('case/pop ratio',total_cases/pop)
-    plt.plot(case_time,case_data, 'o',label = 'data')
+
+    death_model = gauss_error_model(more_time,*case_gauss_error_fit[0])
+    death_upper = gauss_error_model(more_time,
+        case_gauss_error_fit[0][0]+case_error[0],
+        case_gauss_error_fit[0][1]+case_error[1],
+        case_gauss_error_fit[0][2]+case_error[2])
+    death_lower = gauss_error_model(more_time,
+        case_gauss_error_fit[0][0]-case_error[0],
+        case_gauss_error_fit[0][1]-case_error[1],
+        case_gauss_error_fit[0][2]-case_error[2])
+
+    plt.plot(case_time,case_data, '.k',label = 'data')
     plt.plot(more_time,gauss_error_model(more_time,*case_gauss_error_fit[0]),label = 'model')
+    plt.fill_between(more_time, case_lower, case_upper, alpha=0.2)
 # plt.plot(case_time,case_data)
 # plt.plot(death_time+time_diff,logistic_model(death_time,*death_logistic_fit[0]))
 # plt.plot(more_time,gamma.cdf(more_time,*gamma_fit))
