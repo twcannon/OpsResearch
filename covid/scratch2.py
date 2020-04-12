@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.stats import gamma
 from scipy.special import erf
+
 # import pandas as pd
 # from scipy.optimize import fsolve
 # from datetime import datetime,timedelta
@@ -21,8 +22,34 @@ geo = sys.argv[2]
 val = sys.argv[3]
 
 ### get data
-url = 'https://usafactsstatic.blob.core.windows.net/public/2020/coronavirus-timeline/allData.json'
-data = requests.get(url).json()
+csv_counties_data = np.genfromtxt('covid-19-data/us-counties.csv', delimiter=',', names=True, skip_header=0, dtype=None)
+csv_states_data = np.genfromtxt('covid-19-data/us-states.csv', delimiter=',', names=True, skip_header=0, dtype=None)
+
+nyt_data_dict = {}
+print(np.unique(csv_counties_data['fips']))
+print(np.unique(csv_counties_data['date']))
+
+for i in range(len(csv_counties_data)):
+    fips_code = str(csv_counties_data[i][3])
+    if (fips_code) in nyt_data_dict:
+        nyt_data_dict[(fips_code)]['date'].append(csv_counties_data[i][0])
+        nyt_data_dict[(fips_code)]['cases'].append(csv_counties_data[i][4])
+        nyt_data_dict[(fips_code)]['deaths'].append(csv_counties_data[i][5])
+    else:
+        nyt_data_dict[(fips_code)] = {}
+        nyt_data_dict[(fips_code)]['date'] = []
+        nyt_data_dict[(fips_code)]['cases'] = []
+        nyt_data_dict[(fips_code)]['deaths'] = []
+        nyt_data_dict[(fips_code)]['county'] = csv_counties_data[i][1]
+        nyt_data_dict[(fips_code)]['state'] = csv_counties_data[i][2]
+
+print(nyt_data_dict['6075'])
+sys.exit()
+
+
+json_url = 'https://usafactsstatic.blob.core.windows.net/public/2020/coronavirus-timeline/allData.json'
+data = requests.get(json_url).json()
+print(data)
 
 def safeget(dct,*keys):
     for key in keys:
