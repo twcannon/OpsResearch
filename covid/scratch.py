@@ -153,17 +153,19 @@ if d_c.lower() == 'deaths':
     death_error = np.sqrt(np.diag(death_gauss_error_fit[1]))
     print('\ndeaths so far:',death_data[-1])
     print('estimated total deaths:',int(total_deaths),'with 1 stdev of',death_error[2])
+    print('estimated growth parameter:',death_gauss_error_fit[0][0],'with 1 stdev of',death_error[0])
+    print('estimated inflection point (days):',death_gauss_error_fit[0][1],'with 1 stdev of',death_error[1])
     print('death/pop ratio',total_deaths/pop)
     print('\n')
 
     death_model = gauss_error_model(more_time,*death_gauss_error_fit[0])
     death_upper = gauss_error_model(more_time,
         death_gauss_error_fit[0][0]+death_error[0],
-        death_gauss_error_fit[0][1]+death_error[1],
+        death_gauss_error_fit[0][1]-death_error[1],
         death_gauss_error_fit[0][2]+death_error[2])
     death_lower = gauss_error_model(more_time,
         death_gauss_error_fit[0][0]-death_error[0],
-        death_gauss_error_fit[0][1]-death_error[1],
+        death_gauss_error_fit[0][1]+death_error[1],
         death_gauss_error_fit[0][2]-death_error[2])
 
     plt.plot(death_plot_time,death_plot_data, '.k',label = 'data')
@@ -175,17 +177,19 @@ elif d_c.lower() == 'cases':
     case_error = np.sqrt(np.diag(case_gauss_error_fit[1]))
     print('\ncases so far:',case_data[-1])
     print('estimated total cases:',total_cases,'with 1 stdev of',case_error[2])
+    print('estimated growth parameter:',case_gauss_error_fit[0][0],'with 1 stdev of',case_error[0])
+    print('estimated inflection point (days):',case_gauss_error_fit[0][1],'with 1 stdev of',case_error[1])
     print('case/pop ratio',total_cases/pop)
     print('\n')
 
     case_model = gauss_error_model(more_time,*case_gauss_error_fit[0])
     case_upper = gauss_error_model(more_time,
         case_gauss_error_fit[0][0]+case_error[0],
-        case_gauss_error_fit[0][1]+case_error[1],
+        case_gauss_error_fit[0][1]-case_error[1],
         case_gauss_error_fit[0][2]+case_error[2])
     case_lower = gauss_error_model(more_time,
         case_gauss_error_fit[0][0]-case_error[0],
-        case_gauss_error_fit[0][1]-case_error[1],
+        case_gauss_error_fit[0][1]+case_error[1],
         case_gauss_error_fit[0][2]-case_error[2])
 
     plt.plot(case_time,case_data, '.k',label = 'data')
