@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.stats import gamma
 from scipy.special import erf
+import json
 
 # import pandas as pd
 # from scipy.optimize import fsolve
@@ -26,7 +27,7 @@ csv_counties_data = np.genfromtxt('covid-19-data/us-counties.csv', delimiter=','
 csv_states_data = np.genfromtxt('covid-19-data/us-states.csv', delimiter=',', names=True, skip_header=0, dtype=None)
 
 nyt_data_dict = {}
-print(np.unique(csv_counties_data['fips']))
+fip_list = np.unique(csv_counties_data['fips'])
 print(np.unique(csv_counties_data['date']))
 
 for i in range(len(csv_counties_data)):
@@ -43,15 +44,22 @@ for i in range(len(csv_counties_data)):
         nyt_data_dict[(fips_code)]['county'] = csv_counties_data[i][1]
         nyt_data_dict[(fips_code)]['state'] = csv_counties_data[i][2]
 
-print(nyt_data_dict['6075'])
-sys.exit()
+print('---------')
+print(str(int(val)))
+print(nyt_data_dict[str(int(val))])
 
 
 json_url = 'https://usafactsstatic.blob.core.windows.net/public/2020/coronavirus-timeline/allData.json'
 data = requests.get(json_url).json()
-print(data)
+# print(data[0])
+# print('---------')
+# states_json_url = 'https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_hash.json'
+# states_data = requests.get(states_json_url).json()
+# print(states_data['AL'])
+print('---------')
+# sys.exit()
 
-def safeget(dct,*keys):
+def safe_get(dct,*keys):
     for key in keys:
         try:
             dct = dct[key]
@@ -122,6 +130,29 @@ def clean_data(data):
                 else:
                     new_data.append(data[i])
     return np.array(new_data)
+
+final_dict = {}
+print(nyt_data_dict.keys())
+for fip_code in fip_list:
+    print(fip_code)
+    str_fip = str(fip_code).zfill(5)
+    county_data = safe_get(data_dict, str_fip)
+    if county_data is not None:
+        final_dict[str_fip] = data_dict[str_fip]
+        final_dict[str_fip]['deaths'] = list(np.array(nyt_data_dict[str(fip_code)]['deaths']).astype(str))
+        final_dict[str_fip]['cases'] = list(np.array(nyt_data_dict[str(fip_code)]['cases']).astype(str))
+        final_dict[str_fip]['date'] = list(np.array(nyt_data_dict[str(fip_code)]['date']).astype(str))
+        # print(final_dict[str_fip])
+        # sys.exit()
+
+
+
+print(len(data_dict))
+print(len(nyt_data_dict))
+print(len(final_dict))
+with open('county_data.json', 'w') as outfile:
+    json.dump(final_dict, outfile)
+sys.exit()
 
 
 rate_tol = 1e-15

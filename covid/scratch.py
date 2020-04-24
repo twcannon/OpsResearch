@@ -99,6 +99,12 @@ def clean_data(data):
 
 rate_tol = 1e-15
 
+print(data_dict)
+print('------------')
+print(val)
+print('------------')
+print(data_dict[val])
+
 pop = float(data_dict[val]['pop'])
 
 # deaths = np.log(data_dict[val]['deaths'])
