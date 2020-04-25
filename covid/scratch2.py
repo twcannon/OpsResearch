@@ -32,7 +32,7 @@ print(np.unique(csv_counties_data['date']))
 
 for i in range(len(csv_counties_data)):
     fips_code = str(csv_counties_data[i][3])
-    if (fips_code) in nyt_data_dict:
+    if str(fips_code) in nyt_data_dict:
         nyt_data_dict[(fips_code)]['date'].append(csv_counties_data[i][0])
         nyt_data_dict[(fips_code)]['cases'].append(csv_counties_data[i][4])
         nyt_data_dict[(fips_code)]['deaths'].append(csv_counties_data[i][5])
@@ -134,7 +134,7 @@ def clean_data(data):
 final_dict = {}
 print(nyt_data_dict.keys())
 for fip_code in fip_list:
-    print(fip_code)
+    # print(fip_code)
     str_fip = str(fip_code).zfill(5)
     county_data = safe_get(data_dict, str_fip)
     if county_data is not None:
@@ -162,8 +162,8 @@ pop = float(data_dict[val]['pop'])
 # deaths = np.log(data_dict[val]['deaths'])
 # cases = np.log(data_dict[val]['cases'])
 # print(data_dict[val]['deaths'])
-deaths = clean_data(data_dict[val]['deaths'])
-cases  = clean_data(data_dict[val]['cases'])
+deaths = clean_data(data_dict[val]['deaths']).astype(int)
+cases  = clean_data(data_dict[val]['cases']).astype(int)
 # print(deaths)
 
 

@@ -49,7 +49,7 @@ def clean_data(data):
 
 with open('model_results_'+d_c+'.csv','w') as f1:
     writer=csv.writer(f1, delimiter=',',lineterminator='\n',)
-    writer.writerow(['County','Fips','start_date','a','B','p','a_e','B_e','p_e'])
+    writer.writerow(['County','Fips','start_date','a','B','p','a_e','B_e','p_e','model','upper','lower','counts'])
 
 
     for val in fips_codes:
@@ -58,6 +58,8 @@ with open('model_results_'+d_c+'.csv','w') as f1:
         dep = clean_data(np.array(data_dict[val][d_c.lower()]).astype(int))
         dep_rate = dep/pop
         dep_data = dep[dep_rate >= rate_tol]
+        more_time = np.array([float(i) for i in list(range(1,(max([len(dep_data)])*2)+1))])
+        # more_time = np.array([float(i) for i in list(range(1,(max([1])*365)+1))])
         if len(dep_data) <= 3:
             writer.writerow([data_dict[val]['name'],val,'','','','','','',''])
         else:
@@ -66,7 +68,17 @@ with open('model_results_'+d_c+'.csv','w') as f1:
             results = gauss_error_fit[0]
             results_error = np.sqrt(np.diag(gauss_error_fit[1]))
 
-            new_row = [data_dict[val]['name'],val,data_dict[val]['date'][0],results[0],results[1],results[2],results_error[0],results_error[1],results_error[2]]
+            case_model = gauss_error_model(more_time,*results)
+            case_upper = gauss_error_model(more_time,
+                results[0]+results_error[0],
+                results[1]-results_error[1],
+                results[2]+results_error[2])
+            case_lower = gauss_error_model(more_time,
+                results[0]-results_error[0],
+                results[1]+results_error[1],
+                results[2]-results_error[2])
+
+            new_row = [data_dict[val]['name'],val,data_dict[val]['date'][0],results[0],results[1],results[2],results_error[0],results_error[1],results_error[2],str(case_model),str(case_upper),str(case_lower),dep]
             writer.writerow(new_row)
 
 print('Done')
